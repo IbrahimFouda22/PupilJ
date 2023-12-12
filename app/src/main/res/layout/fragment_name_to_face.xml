@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="children"
+            type="com.example.domain.models.ChildrenTeacher" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNameToFace_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/canary"
+                android:padding="20dp">
+
+                <ImageButton
+                    android:id="@+id/btnBackNameToFace_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icon_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtActivityTypeNameToFace_teacher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtActivityTypeNameToFace_teacher" />
+
+                <TextView
+                    android:id="@+id/txtActivityTypeNameToFace_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/nameToFace"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardNameToFace_teacher">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imgCircularStudentNameToFace_teacher"
+                android:layout_width="@dimen/imgActivitySize"
+                android:layout_height="@dimen/imgActivitySize"
+                app:cardCornerRadius="@dimen/imgActivitySize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    bindImage="@{children.profilePhotoUrl}"
+                    android:src="@drawable/img_item_child" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtNameStudentNameToFace_teacher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:text="@{children.name}"
+                android:textSize="@dimen/head_size"
+                app:layout_constraintBottom_toBottomOf="@+id/imgCircularStudentNameToFace_teacher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgCircularStudentNameToFace_teacher"
+                app:layout_constraintTop_toTopOf="@+id/imgCircularStudentNameToFace_teacher"
+                tools:text="Yehia Ahmed" />
+
+            <View
+                android:id="@+id/lineUnderStudentPhotoNameToFace_food"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/imgCircularStudentNameToFace_teacher" />
+
+            <TextView
+                android:id="@+id/txtTimeNameToFace_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineUnderStudentPhotoNameToFace_food" />
+
+            <TextView
+                android:id="@+id/txtTimeNameToFace2_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorBackGroundDailyText"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toEndOf="@+id/txtTimeNameToFace_teacher"
+                app:layout_constraintTop_toTopOf="@+id/txtTimeNameToFace_teacher"
+                tools:text="Today at 06:57 PM" />
+
+            <View
+                android:id="@+id/lineUnderStudentTimeNameToFace_food"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/txtTimeNameToFace2_teacher" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipNameToFaceType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineUnderStudentTimeNameToFace_food"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAway_NameToFace"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/away"
+                    android:textSize="@dimen/chipNameToFace_nameText"
+                    app:chipCornerRadius="5dp"
+                    app:chipEndPadding="@dimen/chipNameToFace_namePadding"
+                    app:chipStartPadding="@dimen/chipNameToFace_namePadding" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipHere_NameToFace"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/here"
+                    android:textSize="@dimen/chipNameToFace_nameText"
+                    app:chipEndPadding="@dimen/chipNameToFace_namePadding"
+                    app:chipStartPadding="@dimen/chipNameToFace_namePadding"
+                    app:chipCornerRadius="5dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <View
+                android:id="@+id/lineUnderChipNameToFace"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/chipNameToFaceType" />
+
+            <TextView
+                android:id="@+id/txtNameToFace_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/notes"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineUnderChipNameToFace" />
+
+            <ImageButton
+                android:id="@+id/imgBtnCamera_NameToFace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="5dp"
+                android:src="@drawable/icon_camera"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNameToFace_teacher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtNameToFace_teacher" />
+
+            <EditText
+                android:id="@+id/txtAreaNameToFace_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/areaHeight"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_edittext_area"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:padding="10dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/areaTextSize"
+                app:layout_constraintBottom_toTopOf="@+id/btnAddActivityNameToFace_teacher"
+                app:layout_constraintTop_toBottomOf="@+id/txtNameToFace_teacher" />
+
+            <Button
+                android:id="@+id/btnAddActivityNameToFace_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_button"
+                android:text="@string/add_activity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAreaNameToFace_teacher" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

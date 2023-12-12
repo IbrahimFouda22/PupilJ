@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_teacher"
+    app:startDestination="@id/homeTeacherFragment">
+
+    <fragment
+        android:id="@+id/homeTeacherFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.HomeTeacherFragment"
+        android:label="fragment_home_teacher"
+        tools:layout="@layout/fragment_home_teacher">
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileTeacherFragment"
+        android:name="com.example.schoolapp.fragments.teacher.profile.ProfileTeacherFragment"
+        android:label="fragment_profile_teacher"
+        tools:layout="@layout/fragment_profile_teacher" />
+    <fragment
+        android:id="@+id/settingTeacherFragment"
+        android:name="com.example.schoolapp.fragments.teacher.setting.SettingTeacherFragment"
+        android:label="fragment_setting_teacher"
+        tools:layout="@layout/fragment_setting_teacher" />
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.RoomsFragment"
+        android:label="RoomsFragment"
+        tools:layout="@layout/fragment_rooms">
+        <action
+            android:id="@+id/action_roomsFragment_to_specificRoomFragment"
+            app:destination="@id/specificRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificRoomFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.SpecificRoomFragment"
+        android:label="SpecificRoomFragment"
+        tools:layout="@layout/fragment_specific_room">
+        <argument
+            android:name="className"
+            app:argType="string" />
+        <argument
+            android:name="roomId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_specificRoomFragment_to_specificChildFragment"
+            app:destination="@id/specificChildFragment" />
+        <action
+            android:id="@+id/action_specificRoomFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificChildFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.SpecificChildFragment"
+        android:label="SpecificChildFragment"
+        tools:layout="@layout/fragment_specific_child">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+        <argument
+            android:name="className"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_specificChildFragment_to_addActivityFragment"
+            app:destination="@id/addActivityFragment" />
+        <action
+            android:id="@+id/action_specificChildFragment_to_specificChildProfileFragment"
+            app:destination="@id/specificChildProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addActivityFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.AddActivityFragment"
+        android:label="AddActivityFragment"
+        tools:layout="@layout/fragment_add_activity">
+        <action
+            android:id="@+id/action_addActivityFragment_to_pottyFragment"
+            app:destination="@id/pottyFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_napFragment"
+            app:destination="@id/napFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_nameToFaceFragment"
+            app:destination="@id/nameToFaceFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_customFragment"
+            app:destination="@id/customFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_medFragment"
+            app:destination="@id/medFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_incidentsFragment"
+            app:destination="@id/incidentsFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_healthCheckFragment"
+            app:destination="@id/healthCheckFragment" />
+        <action
+            android:id="@+id/action_addActivityFragment_to_observationFragment"
+            app:destination="@id/observationFragment" />
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/pottyFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.potty.PottyFragment"
+        android:label="PottyFragment"
+        tools:layout="@layout/fragment_potty">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.food.FoodFragment"
+        android:label="FoodFragment"
+        tools:layout="@layout/fragment_food">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/napFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.nap.NapFragment"
+        android:label="NapFragment"
+        tools:layout="@layout/fragment_nap">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.note.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/achievementFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.achievement.AchievementFragment"
+        android:label="AchievementFragment"
+        tools:layout="@layout/fragment_achievement">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/customFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.custom.CustomFragment"
+        android:label="CustomFragment"
+        tools:layout="@layout/fragment_custom">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/medFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.med.MedFragment"
+        android:label="MedFragment"
+        tools:layout="@layout/fragment_med">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameToFaceFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.nametoface.NameToFaceFragment"
+        android:label="NameToFaceFragment"
+        tools:layout="@layout/fragment_name_to_face">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/incidentsFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.incidents.IncidentsFragment"
+        android:label="IncidentsFragment"
+        tools:layout="@layout/fragment_incidents">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthCheckFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.healthcheck.HealthCheckFragment"
+        android:label="HealthCheckFragment"
+        tools:layout="@layout/fragment_health_check">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/observationFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.addactivity.observation.ObservationFragment"
+        android:label="ObservationFragment"
+        tools:layout="@layout/fragment_observation">
+        <argument
+            android:name="childrenInfo"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.attendance.AttendanceFragment"
+        android:label="AttendanceFragment"
+        tools:layout="@layout/fragment_attendance">
+        <argument
+            android:name="className"
+            app:argType="string" />
+        <argument
+            android:name="children"
+            app:argType="com.example.domain.models.ChildrenTeacher[]" />
+        <argument
+            android:name="classId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificChildProfileFragment"
+        android:name="com.example.schoolapp.fragments.teacher.home.room.specificroom.specificchild.profile.SpecificChildProfileFragment"
+        android:label="SpecificChildProfileFragment"
+        tools:layout="@layout/fragment_specific_child_profile" >
+        <argument
+            android:name="className"
+            app:argType="string" />
+        <argument
+            android:name="children"
+            app:argType="com.example.domain.models.ChildrenTeacher" />
+    </fragment>
+</navigation>

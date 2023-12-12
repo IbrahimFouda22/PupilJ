@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="childrenInfo"
+            type="com.example.domain.models.ChildrenTeacher" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtNameCardInfo_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/head_size"
+                android:text="@{childrenInfo.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Yehia Ahmed" />
+
+            <TextView
+                android:id="@+id/txtBirthdayCardInfo_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/birthday"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNameCardInfo_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtBirthdayCardInfo2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.dob}"
+                app:layout_constraintStart_toEndOf="@+id/txtBirthdayCardInfo_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtBirthdayCardInfo_SpecificChild"
+                tools:text="14.11.2023" />
+
+            <TextView
+                android:id="@+id/txtMedicationCardInfo_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/medications"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="@id/txtBirthdayCardInfo_SpecificChild"
+                app:layout_constraintTop_toBottomOf="@+id/txtBirthdayCardInfo2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtMedicationCardInfo2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.medicine}"
+                app:layout_constraintStart_toEndOf="@+id/txtMedicationCardInfo_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtMedicationCardInfo_SpecificChild"
+                tools:text="Cital every 6 hour" />
+
+            <TextView
+                android:id="@+id/txtAllergiesCardInfo_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/allergies"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="@id/txtMedicationCardInfo_SpecificChild"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedicationCardInfo2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtAllergiesCardInfo2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.allergies}"
+                app:layout_constraintStart_toEndOf="@+id/txtAllergiesCardInfo_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtAllergiesCardInfo_SpecificChild"
+                tools:text="Cital every 6 hour" />
+
+            <TextView
+                android:id="@+id/txtNotesCardInfo_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/notes"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="@id/txtAllergiesCardInfo_SpecificChild"
+                app:layout_constraintTop_toBottomOf="@+id/txtAllergiesCardInfo2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtNotesCardInfo2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.notes}"
+                app:layout_constraintStart_toEndOf="@+id/txtNotesCardInfo_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtNotesCardInfo_SpecificChild"
+                tools:text="Cital every 6 hour" />
+
+            <View
+                android:id="@+id/lineCardInf_specificChild"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_line_2"
+                app:layout_constraintBottom_toTopOf="@+id/txtBtnOk_specificChild"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNotesCardInfo2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtBtnOk_specificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/ok"
+                android:textColor="@color/orange"
+                android:textSize="40sp"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@+id/lineCardInf_specificChild"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:focusable="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".fragments.parent.profile.ProfileParentFragment">
+
+        <TextView
+            android:id="@+id/txtProfile_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/profile"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUnderHead_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ibrahim Fouda Mohamed"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/txtProfile_profile"
+            app:layout_constraintStart_toStartOf="@+id/txtProfile_profile"
+            app:layout_constraintTop_toBottomOf="@id/txtProfile_profile" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imgCircular_profile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="150dp"
+            app:layout_constraintEnd_toEndOf="@id/txtProfile_profile"
+            app:layout_constraintStart_toStartOf="@+id/txtProfile_profile"
+            app:layout_constraintTop_toBottomOf="@id/txtUnderHead_profile">
+
+            <ImageView
+                android:id="@+id/imgProfile_Profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_circular" />
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/edtPersonalDetails_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorEditTextBackGround"
+            android:enabled="false"
+            android:padding="12dp"
+            android:text="@string/personal_details"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/imgCircular_profile" />
+
+        <EditText
+            android:id="@+id/edtFirstName_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_2"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:enabled="false"
+            android:textColor="@color/colorTextInEditText"
+            app:layout_constraintEnd_toEndOf="@+id/edtPersonalDetails_profile"
+            app:layout_constraintStart_toStartOf="@+id/edtPersonalDetails_profile"
+            app:layout_constraintTop_toBottomOf="@+id/edtPersonalDetails_profile" />
+
+
+        <EditText
+            android:id="@+id/edtAccountInfo_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorEditTextBackGround"
+            android:enabled="false"
+            android:padding="12dp"
+            android:text="@string/account_info"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/edtFirstName_profile"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <EditText
+            android:id="@+id/edtEmail_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_2"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:enabled="false"
+            android:textColor="@color/colorTextInEditText"
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintTop_toBottomOf="@+id/edtAccountInfo_profile" />
+
+        <EditText
+            android:id="@+id/edtPhoneNo_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_2"
+            android:hint="@string/phone_no"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:enabled="false"
+            android:textColor="@color/colorTextInEditText"
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail_profile" />
+
+        <Button
+            style="@style/buttonLogOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/log_out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
+            app:layout_constraintTop_toBottomOf="@+id/edtPhoneNo_profile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

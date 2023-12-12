@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="head_size">20sp</dimen>
+    <dimen name="corner_edit_button">10dp</dimen>
+    <dimen name="edittext_height">40dp</dimen>
+    <dimen name="iconDimen">20dp</dimen>
+    <dimen name="textSettingDimen">14sp</dimen>
+    <dimen name="cardDimen">40dp</dimen>
+    <dimen name="txtCardInfoDimen">18sp</dimen>
+    <dimen name="chipNapText">14sp</dimen>
+    <dimen name="chipNapPadding">2dp</dimen>
+    <dimen name="chipPottyPadding">10dp</dimen>
+    <dimen name="chipFood_foodText">20sp</dimen>
+    <dimen name="chipFood_foodPadding">20dp</dimen>
+    <dimen name="chipNameToFace_nameText">16sp</dimen>
+    <dimen name="chipNameToFace_namePadding">20dp</dimen>
+    <dimen name="chipFood_eatText">12sp</dimen>
+    <dimen name="chipFood_eatPadding">8dp</dimen>
+    <dimen name="chipPotty">16sp</dimen>
+    <dimen name="areaTextSize">14sp</dimen>
+    <dimen name="areaHeight">120dp</dimen>
+    <dimen name="imgActivitySize">50dp</dimen>
+    <dimen name="iconSettingSize">50dp</dimen>
+</resources>

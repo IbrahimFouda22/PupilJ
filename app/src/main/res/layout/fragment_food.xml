@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="children"
+            type="com.example.domain.models.ChildrenTeacher" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFood_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/canary"
+                android:padding="20dp">
+
+                <ImageButton
+                    android:id="@+id/btnBackFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icon_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtActivityTypeFood_teacher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtActivityTypeFood_teacher" />
+
+                <TextView
+                    android:id="@+id/txtActivityTypeFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/food"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/cardFood_teacher"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgCircularStudentFood_teacher"
+                    android:layout_width="@dimen/imgActivitySize"
+                    android:layout_height="@dimen/imgActivitySize"
+                    app:cardCornerRadius="@dimen/imgActivitySize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        bindImage="@{children.profilePhotoUrl}"
+                        android:src="@drawable/img_item_child" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtNameStudentFood_teacher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/head_size"
+                    android:text="@{children.name}"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgCircularStudentFood_teacher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgCircularStudentFood_teacher"
+                    app:layout_constraintTop_toTopOf="@+id/imgCircularStudentFood_teacher"
+                    tools:text="Yehia Ahmed" />
+
+                <View
+                    android:id="@+id/lineUnderStudentPhotoFood_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@id/imgCircularStudentFood_teacher" />
+
+                <TextView
+                    android:id="@+id/txtTimeFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineUnderStudentPhotoFood_food" />
+
+                <TextView
+                    android:id="@+id/txtTimeFood2_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/colorBackGroundDailyText"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintStart_toEndOf="@+id/txtTimeFood_teacher"
+                    app:layout_constraintTop_toTopOf="@+id/txtTimeFood_teacher"
+                    tools:text="Today at 06:57 PM" />
+
+                <View
+                    android:id="@+id/lineUnderStudentTimeFood_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@id/txtTimeFood2_teacher" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipFoodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineUnderStudentTimeFood_food"
+                    app:selectionRequired="true"
+                    app:singleSelection="true"
+                    tools:layout_editor_absoluteX="20dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipFood_FoodType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/food"
+                        android:textSize="@dimen/chipFood_foodText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_foodPadding"
+                        app:chipStartPadding="@dimen/chipFood_foodPadding" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBottle_FoodType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bottle"
+                        android:textSize="@dimen/chipFood_foodText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_foodPadding"
+                        app:chipStartPadding="@dimen/chipFood_foodPadding" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipEatType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chipFoodType"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll_EatType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all"
+                        android:textSize="@dimen/chipFood_eatText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_eatPadding"
+                        app:chipStartPadding="@dimen/chipFood_eatPadding" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMost_EatType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/most"
+                        android:textSize="@dimen/chipFood_eatText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_eatPadding"
+                        app:chipStartPadding="@dimen/chipFood_eatPadding" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSome_EatType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/some"
+                        android:textSize="@dimen/chipFood_eatText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_eatPadding"
+                        app:chipStartPadding="@dimen/chipFood_eatPadding" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipNone_EatType"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/none"
+                        android:textSize="@dimen/chipFood_eatText"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="@dimen/chipFood_eatPadding"
+                        app:chipStartPadding="@dimen/chipFood_eatPadding" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <View
+                    android:id="@+id/lineUnderChips_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@id/chipEatType" />
+
+
+                <TextView
+                    android:id="@+id/txtTypeFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineUnderChips_food" />
+
+                <Spinner
+                    android:id="@+id/spinnerTypeFood_teacher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txtTypeFood_teacher"
+                    app:layout_constraintTop_toTopOf="@+id/txtTypeFood_teacher"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTypeFood_teacher"/>
+
+                <View
+                    android:id="@+id/lineUnderTypeFood_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerTypeFood_teacher" />
+
+                <TextView
+                    android:id="@+id/txtMealItemFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/meal_items"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineUnderTypeFood_food" />
+
+                <TextView
+                    android:id="@+id/txtMealItemFood2_teacher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/colorBackGroundDailyText"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintEnd_toStartOf="@+id/imgBtnAddItem_food"
+                    app:layout_constraintStart_toEndOf="@+id/txtMealItemFood_teacher"
+                    app:layout_constraintTop_toTopOf="@+id/txtMealItemFood_teacher" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnAddItem_food"
+                    app:layout_constraintStart_toEndOf="@+id/txtMealItemFood2_teacher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtMealItemFood2_teacher"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtMealItemFood2_teacher"
+                    android:padding="2dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_add_item"/>
+
+                <View
+                    android:id="@+id/lineUnderMealItemFood_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@id/txtMealItemFood2_teacher" />
+
+                <TextView
+                    android:id="@+id/txtNoteFood_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/notes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/txtCardInfoDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineUnderMealItemFood_food" />
+
+                <EditText
+                    android:id="@+id/txtArea_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/areaHeight"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edittext_area"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:overScrollMode="always"
+                    android:padding="10dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/areaTextSize"
+                    app:layout_constraintBottom_toTopOf="@+id/btnAddActivityFood_teacher"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNoteFood_teacher" />
+
+                <Button
+                    android:id="@+id/btnAddActivityFood_teacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_button"
+                    android:text="@string/add_activity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtArea_food" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txtSetting_SettingTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/setting"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgInfo_settingTeacher"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_info_setting"
+            app:layout_constraintBottom_toTopOf="@+id/lineInfo_settingTeacher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSetting_SettingTeacher" />
+
+        <TextView
+            android:id="@+id/txtInfo_settingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/about_us"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgInfo_settingTeacher"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowAboutUs_settingTeacher"
+            app:layout_constraintStart_toEndOf="@+id/imgInfo_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/imgInfo_settingTeacher" />
+
+        <ImageButton
+            android:id="@+id/btnArrowAboutUs_settingTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_arrow_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtInfo_settingTeacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtInfo_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/txtInfo_settingTeacher" />
+
+        <View
+            android:id="@+id/lineInfo_settingTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_line"
+            app:layout_constraintBottom_toTopOf="@+id/imgContact_settingTeacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgInfo_settingTeacher" />
+
+        <ImageView
+            android:id="@+id/imgContact_settingTeacher"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_contact"
+            app:layout_constraintBottom_toTopOf="@+id/lineContact_settingTeacher"
+            app:layout_constraintStart_toStartOf="@+id/imgInfo_settingTeacher"
+            app:layout_constraintTop_toBottomOf="@+id/lineInfo_settingTeacher" />
+
+        <TextView
+            android:id="@+id/txtContact_settingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/contact_us"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgContact_settingTeacher"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowContactUs_settingTeacher"
+            app:layout_constraintStart_toEndOf="@+id/imgContact_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/imgContact_settingTeacher" />
+
+        <ImageButton
+            android:id="@+id/btnArrowContactUs_settingTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_arrow_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtContact_settingTeacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtContact_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/txtContact_settingTeacher" />
+
+        <View
+            android:id="@+id/lineContact_settingTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_line"
+            app:layout_constraintBottom_toTopOf="@+id/imgLanguage_settingTeacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgContact_settingTeacher" />
+
+        <ImageView
+            android:id="@+id/imgLanguage_settingTeacher"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_language"
+            app:layout_constraintBottom_toTopOf="@+id/lineLanguage_settingTeacher"
+            app:layout_constraintStart_toStartOf="@+id/imgInfo_settingTeacher"
+            app:layout_constraintTop_toBottomOf="@+id/lineContact_settingTeacher" />
+
+        <TextView
+            android:id="@+id/txtLanguage_settingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/change_language"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgLanguage_settingTeacher"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowChangeLang_settingTeacher"
+            app:layout_constraintStart_toEndOf="@+id/imgLanguage_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/imgLanguage_settingTeacher" />
+
+        <ImageButton
+            android:id="@+id/btnArrowChangeLang_settingTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_arrow_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanguage_settingTeacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtLanguage_settingTeacher"
+            app:layout_constraintTop_toTopOf="@+id/txtLanguage_settingTeacher" />
+
+        <View
+            android:id="@+id/lineLanguage_settingTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgLanguage_settingTeacher"
+            tools:layout_editor_absoluteX="20dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

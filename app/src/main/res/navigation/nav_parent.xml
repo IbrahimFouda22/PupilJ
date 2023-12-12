@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_parent"
+    app:startDestination="@id/homeParentFragment">
+
+    <fragment
+        android:id="@+id/homeParentFragment"
+        android:name="com.example.schoolapp.fragments.parent.home.HomeParentFragment"
+        android:label="fragment_home_parent"
+        tools:layout="@layout/fragment_home_parent" >
+        <action
+            android:id="@+id/action_homeParentFragment_to_myChildrenFragment"
+            app:destination="@id/myChildrenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileParentFragment"
+        android:name="com.example.schoolapp.fragments.parent.profile.ProfileParentFragment"
+        android:label="fragment_profile_parent"
+        tools:layout="@layout/fragment_profile_parent" />
+    <fragment
+        android:id="@+id/settingParentFragment"
+        android:name="com.example.schoolapp.fragments.parent.setting.SettingParentFragment"
+        android:label="fragment_setting_parent"
+        tools:layout="@layout/fragment_setting_parent" />
+    <fragment
+        android:id="@+id/myChildrenFragment"
+        tools:layout="@layout/fragment_my_childrens"
+        android:name="com.example.schoolapp.fragments.parent.children.mychildrens.MyChildrenFragment"
+        android:label="MyChildrenFragment" >
+        <action
+            android:id="@+id/action_myChildrenFragment_to_childrenActivitiesFragment"
+            app:destination="@id/childrenActivitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childrenActivitiesFragment"
+        tools:layout="@layout/fragment_children_activites"
+        android:name="com.example.schoolapp.fragments.parent.children.childactivity.ChildrenActivitiesFragment"
+        android:label="ChildrenActivitiesFragment" >
+        <argument
+            android:name="children"
+            app:argType="com.example.domain.models.Children" />
+    </fragment>
+</navigation>

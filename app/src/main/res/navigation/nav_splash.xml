@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_splash"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        tools:layout="@layout/fragment_view_pager"
+        android:name="com.example.schoolapp.fragments.onboarding.ViewPagerFragment"
+        android:label="ViewPagerFragment" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_joinAsFragment"
+            app:destination="@id/joinAsFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinAsFragment"
+        android:name="com.example.schoolapp.fragments.joinas.JoinAsFragment"
+        android:label="fragment_join_as"
+        tools:layout="@layout/fragment_join_as" >
+        <action
+            android:id="@+id/action_joinAsFragment_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        tools:layout="@layout/fragment_sign_in_parent"
+        android:name="com.example.schoolapp.fragments.signin.SignIn"
+        android:label="SignIn" >
+        <argument
+            android:name="actor"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.schoolapp.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_joinAsFragment"
+            app:destination="@id/joinAsFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

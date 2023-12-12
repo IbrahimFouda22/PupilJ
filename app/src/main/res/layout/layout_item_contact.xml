@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="childrenInfo"
+            type="com.example.domain.models.ChildrenTeacher" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtContactCardContact_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/head_size"
+                android:text="@string/contact_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtFatherCardContact_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/father"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtContactCardContact_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtFatherCardContact2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:text="@{childrenInfo.fatherNum}"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toEndOf="@+id/txtFatherCardContact_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtFatherCardContact_SpecificChild"
+                tools:text="14.11.2023" />
+
+            <TextView
+                android:id="@+id/txtMotherCardContact_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/mother"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="@id/txtFatherCardContact_SpecificChild"
+                app:layout_constraintTop_toBottomOf="@+id/txtFatherCardContact2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtMotherCardContact2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.motherNumber}"
+                app:layout_constraintStart_toEndOf="@+id/txtMotherCardContact_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtMotherCardContact_SpecificChild"
+                tools:text="Cital every 6 hour" />
+
+            <TextView
+                android:id="@+id/txtPickUpCardContact_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/pickup"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toStartOf="@id/txtMotherCardContact_SpecificChild"
+                app:layout_constraintTop_toBottomOf="@+id/txtMotherCardContact2_SpecificChild" />
+
+            <TextView
+                android:id="@+id/txtPickUpCardContact2_SpecificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:text="@{childrenInfo.pickUpTime}"
+                app:layout_constraintStart_toEndOf="@+id/txtPickUpCardContact_SpecificChild"
+                app:layout_constraintTop_toTopOf="@+id/txtPickUpCardContact_SpecificChild"
+                tools:text="Cital every 6 hour" />
+
+
+            <View
+                android:id="@+id/lineCardContact_specificChild"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/shape_line_2"
+                app:layout_constraintBottom_toTopOf="@+id/txtBtnOkContact_specificChild"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPickUpCardContact2_SpecificChild"
+                />
+
+            <TextView
+                android:id="@+id/txtBtnOkContact_specificChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/ok"
+                android:textColor="@color/orange"
+                android:textSize="40sp"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@+id/lineCardContact_specificChild"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:focusable="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+</layout>

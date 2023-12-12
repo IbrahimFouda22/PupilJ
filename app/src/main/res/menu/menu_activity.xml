@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/itemAllActivity" android:title="@string/all_activity"/>
+    <item android:id="@+id/itemPhoto" android:title="@string/photo"/>
+    <item android:id="@+id/itemVideo" android:title="@string/video"/>
+    <item android:id="@+id/itemFood" android:title="@string/food"/>
+    <item android:id="@+id/itemNap" android:title="@string/nap"/>
+    <item android:id="@+id/itemPotty" android:title="@string/potty"/>
+    <item android:id="@+id/itemNote" android:title="@string/note"/>
+    <item android:id="@+id/itemAchievement" android:title="@string/achievement"/>
+    <item android:id="@+id/itemCustom" android:title="@string/custom"/>
+    <item android:id="@+id/itemMed" android:title="@string/meds"/>
+    <item android:id="@+id/itemNameToFace" android:title="@string/nameToFace"/>
+    <item android:id="@+id/itemIncidents" android:title="@string/incidents"/>
+    <item android:id="@+id/itemHealthCheck" android:title="@string/healthCheck"/>
+    <item android:id="@+id/itemObservation" android:title="@string/observation"/>
+</menu>

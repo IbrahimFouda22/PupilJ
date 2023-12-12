@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="children"
+            type="com.example.domain.models.ChildrenTeacher" />
+
+        <variable
+            name="className"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.teacher.home.room.specificroom.specificchild.profile.SpecificChildProfileFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSpecificChildren_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_card"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtCloseSpecificChildren_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/close"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtClassSpecificChildren_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{className}"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtCloseSpecificChildren_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/imgRectangle_childActivity"
+                    app:layout_constraintStart_toStartOf="@+id/imgRectangle_childActivity"
+                    app:layout_constraintTop_toTopOf="@+id/txtCloseSpecificChildren_profile" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgRectangle_childActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCloseSpecificChildren_profile">
+
+                    <ImageView
+                        bindImage="@{children.profilePhotoUrl}"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_onboard_screen2" />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardSpecificChildren_profile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtNameSpecificChildren_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.name}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edtBirthdaySpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.dob}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtNameSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtStatusSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/status"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.status}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtBirthdaySpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtNotesSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/notes"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.notes}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtStatusSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtAllergiesSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:hint="@string/allergies"
+                    android:text="@{children.allergies}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtNotesSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtMedicineSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:hint="@string/medications"
+                    android:padding="10dp"
+                    android:text="@{children.medicine}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAllergiesSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtDoctorInfoSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorEditTextBackGround"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@string/doctor_info"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtMedicineSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtDoctorNameSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/doctor_name"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.doctorName}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDoctorInfoSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtDoctorPhoneSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/doctor_phone"
+                    android:inputType="phone"
+                    android:padding="10dp"
+                    android:text="@{children.doctorPhone}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDoctorNameSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtAddressSpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorEditTextBackGround"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@string/address"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDoctorPhoneSpecificChildren_profile" />
+
+
+                <EditText
+                    android:id="@+id/edtAddress1SpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/address_line_1"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.address1}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAddressSpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtAddress2SpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/address_line_2"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.address2}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAddress1SpecificChildren_profile" />
+
+                <EditText
+                    android:id="@+id/edtCitySpecificChildren_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_text_2"
+                    android:enabled="false"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="@{children.city}"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintStart_toStartOf="@+id/edtNameSpecificChildren_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAddress2SpecificChildren_profile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

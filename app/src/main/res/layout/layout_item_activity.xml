@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="item"
+            type="com.example.domain.models.CustomizeChildrenActivity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgItemActivity"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                bindImageLogo="@{item.imgLogo}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/img_photo" />
+
+            <TextView
+                android:id="@+id/txtNoteItemActivity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="top"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@{item.txtDescription}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgItemActivity"
+                app:layout_constraintTop_toTopOf="@id/imgItemActivity"
+                tools:text="Photo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtDateItemActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDate"
+            android:textSize="14sp"
+            android:text="@{item.activityDate}"
+            app:layout_constraintStart_toStartOf="@+id/cons"
+            app:layout_constraintTop_toBottomOf="@id/cons"
+            tools:text="09 Oct 2023 at 06:00 PM" />
+
+        <ImageView
+            android:id="@+id/imgItemActivity_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDateItemActivity"
+            tools:src="@drawable/img_onboard_screen2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

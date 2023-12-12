@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="children"
+            type="com.example.domain.models.ChildrenTeacher" />
+
+        <variable
+            name="className"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.parent.children.childactivity.ChildrenActivitiesFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSpecificChildren_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_card"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtCloseSpecificChildren_Teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/close"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtClassSpecificChildren_Teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{className}"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtCloseSpecificChildren_Teacher"
+                    app:layout_constraintEnd_toStartOf="@+id/txtProfileSpecificChildren_Teacher"
+                    app:layout_constraintStart_toEndOf="@+id/txtCloseSpecificChildren_Teacher"
+                    app:layout_constraintTop_toTopOf="@+id/txtCloseSpecificChildren_Teacher" />
+
+                <TextView
+                    android:id="@+id/txtProfileSpecificChildren_Teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_small"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtCloseSpecificChildren_Teacher"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtClassSpecificChildren_Teacher" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgRectangle_childActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCloseSpecificChildren_Teacher">
+
+                    <ImageView
+                        bindImage="@{children.profilePhotoUrl}"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_onboard_screen2" />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInfoSpecificChildren_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardAddSpecificChildren_teacher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardSpecificChildren_teacher">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/cardDimen"
+                    android:layout_height="@dimen/cardDimen"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_info"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAddSpecificChildren_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardContactSpecificChildren_teacher"
+            app:layout_constraintStart_toEndOf="@id/cardInfoSpecificChildren_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/cardSpecificChildren_teacher">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_add_activity_1"
+                    app:layout_constraintBottom_toTopOf="@id/img2"
+                    app:layout_constraintEnd_toStartOf="@id/img2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_add_activity_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardContactSpecificChildren_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardAddSpecificChildren_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/cardSpecificChildren_teacher">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:backgroundTint="@color/white"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/cardDimen"
+                    android:layout_height="@dimen/cardDimen"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_contact_info"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtAllActivity_childrenActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardInfoSpecificChildren_teacher" />
+
+        <ImageButton
+            android:id="@+id/btnArrowActivityDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/icon_arrow_down"
+            android:padding="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAllActivity_childrenActivity"
+            app:layout_constraintStart_toEndOf="@+id/txtAllActivity_childrenActivity"
+            app:layout_constraintTop_toTopOf="@+id/txtAllActivity_childrenActivity" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDateSpecificChild_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAllActivity_childrenActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorEditTextBackGround"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txtDateSpecificChild_teacher"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="@id/txtDailyReportSpecificChild_teacher"
+                    app:layout_constraintEnd_toStartOf="@+id/txtDailyReportSpecificChild_teacher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtDailyReportSpecificChild_teacher"
+                    tools:text="9 Oct 2023" />
+
+                <TextView
+                    android:id="@+id/txtDailyReportSpecificChild_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackGroundDailyText"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:text="@string/daily_report"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSpecificChild_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardDateSpecificChild_teacher"
+            tools:itemCount="5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.onboarding.screens.Screen3Fragment">
+
+    <ImageView
+        android:id="@+id/imgOnboard3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_onboard_screen3"/>
+    <TextView
+        android:id="@+id/txtHead3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/imgOnboard3"
+        app:layout_constraintEnd_toEndOf="@id/imgOnboard3"
+        app:layout_constraintTop_toBottomOf="@id/imgOnboard3"
+        android:textSize="@dimen/head_size"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:text="@string/head_screen3"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/txtHead3"
+        app:layout_constraintEnd_toEndOf="@id/txtHead3"
+        app:layout_constraintTop_toBottomOf="@id/txtHead3"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:text="@string/under_head_screen3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

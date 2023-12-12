@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="children"
+            type="com.example.domain.models.Children" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.parent.children.childactivity.ChildrenActivitiesFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_childrenActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_card"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/close"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgRectangle_childActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtClose">
+
+                    <ImageView
+                        bindImage="@{children.profilePhotoUrl}"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_onboard_screen2" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtName_childrenActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{children.name}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintEnd_toEndOf="@+id/imgRectangle_childActivity"
+                    app:layout_constraintStart_toStartOf="@+id/imgRectangle_childActivity"
+                    app:layout_constraintTop_toBottomOf="@+id/imgRectangle_childActivity"
+                    tools:text="Yehia Ahmed" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_chat"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imgRectangle_childActivity"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName_childrenActivity" />
+
+                <TextView
+                    android:id="@+id/txtMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/messages"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/imgBtnMessage"
+                    app:layout_constraintStart_toStartOf="@+id/imgBtnMessage"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBtnMessage" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnCalender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_calender"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgBtnMessage"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName_childrenActivity" />
+
+                <TextView
+                    android:id="@+id/txtCalender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/calender"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/imgBtnCalender"
+                    app:layout_constraintStart_toStartOf="@+id/imgBtnCalender"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBtnCalender" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtAllActivity_childrenActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/all_activity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_childrenActivity" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/icon_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAllActivity_childrenActivity"
+            app:layout_constraintStart_toEndOf="@+id/txtAllActivity_childrenActivity"
+            app:layout_constraintTop_toTopOf="@+id/txtAllActivity_childrenActivity" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDate_childrenActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAllActivity_childrenActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorEditTextBackGround"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txtDate_childrenActivity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="@id/txtDailyReport"
+                    app:layout_constraintEnd_toStartOf="@+id/txtDailyReport"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtDailyReport"
+                    tools:text="9 Oct 2023" />
+
+                <TextView
+                    android:id="@+id/txtDailyReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackGroundDailyText"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:text="@string/daily_report"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

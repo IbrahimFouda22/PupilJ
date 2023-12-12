@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.teacher.home.HomeTeacherFragment">
+
+        <TextView
+            android:id="@+id/txtHome_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/administrator_home"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <ImageView
+            android:id="@+id/imgRoomHome_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_room_teacher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgMessageHome_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/txtHome_teacher"/>
+
+        <ImageView
+            android:id="@+id/imgLogoHomeRoom_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_room"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRoomHome_teacher"
+            app:layout_constraintEnd_toEndOf="@+id/imgRoomHome_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgRoomHome_teacher"
+            app:layout_constraintTop_toTopOf="@+id/imgRoomHome_teacher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/rooms"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imgLogoHomeRoom_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgLogoHomeRoom_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoHomeRoom_teacher" />
+
+
+
+        <ImageView
+            android:id="@+id/imgMessageHome_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_message_teacher"
+            app:layout_constraintStart_toEndOf="@+id/imgRoomHome_teacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHome_teacher"/>
+
+        <ImageView
+            android:id="@+id/imgLogoHomeMessage_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_message"
+            app:layout_constraintBottom_toBottomOf="@+id/imgMessageHome_teacher"
+            app:layout_constraintEnd_toEndOf="@+id/imgMessageHome_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgMessageHome_teacher"
+            app:layout_constraintTop_toTopOf="@+id/imgMessageHome_teacher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/messages"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imgLogoHomeMessage_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgLogoHomeMessage_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoHomeMessage_teacher" />
+
+
+
+        <ImageView
+            android:id="@+id/imgStudentHome_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_student_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgRoomHome_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgRoomHome_teacher"/>
+
+        <ImageView
+            android:id="@+id/imgLogoHomeStudent_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_student"
+            app:layout_constraintBottom_toBottomOf="@+id/imgStudentHome_teacher"
+            app:layout_constraintEnd_toEndOf="@+id/imgStudentHome_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgStudentHome_teacher"
+            app:layout_constraintTop_toTopOf="@+id/imgStudentHome_teacher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/students"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imgLogoHomeStudent_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgLogoHomeStudent_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoHomeStudent_teacher" />
+
+
+
+        <ImageView
+            android:id="@+id/imgReminderHome_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_reminder_teacher"
+            app:layout_constraintStart_toEndOf="@+id/imgStudentHome_teacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgMessageHome_teacher"/>
+
+        <ImageView
+            android:id="@+id/imgLogoHomeReminder_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_reminder"
+            app:layout_constraintBottom_toBottomOf="@+id/imgReminderHome_teacher"
+            app:layout_constraintEnd_toEndOf="@+id/imgReminderHome_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgReminderHome_teacher"
+            app:layout_constraintTop_toTopOf="@+id/imgReminderHome_teacher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/reminders"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imgLogoHomeReminder_teacher"
+            app:layout_constraintStart_toStartOf="@+id/imgLogoHomeReminder_teacher"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoHomeReminder_teacher" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
