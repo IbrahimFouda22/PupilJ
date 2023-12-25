@@ -15,8 +15,8 @@ android {
         applicationId = "com.pupilJ.jk"
         minSdk = 24
         targetSdk = 33
-        versionCode = 55
-        versionName = "1.5"
+        versionCode = 66
+        versionName = "1.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

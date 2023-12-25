@@ -1,5 +1,6 @@
 package com.pupilJ.data.mapper
 
+import com.pupilJ.data.dto.AboutUsDto
 import com.pupilJ.data.dto.AddReminderDto
 import com.pupilJ.data.dto.AttendanceDto
 import com.pupilJ.data.dto.ChildrenDto
@@ -23,6 +24,7 @@ import com.pupilJ.data.dto.SendMessageDto
 import com.pupilJ.data.dto.StartRoomDto
 import com.pupilJ.data.dto.TeacherDto
 import com.pupilJ.data.dto.TeacherDtoData
+import com.pupilJ.domain.models.AboutUS
 import com.pupilJ.domain.models.AddReminder
 import com.pupilJ.domain.models.Attendance
 import com.pupilJ.domain.models.Children
@@ -230,5 +232,11 @@ fun parentDtoDataToEntity(parentDtoData: TeacherDtoData):Teacher{
         dob = parentDtoData.dob,
         profilePhotoUrl = parentDtoData.profile_photo_url,
         email = parentDtoData.email,
+    )
+}
+
+fun AboutUsDto.toEntity():AboutUS{
+    return AboutUS(
+        text = data.value
     )
 }

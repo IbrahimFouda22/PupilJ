@@ -4,8 +4,10 @@ import com.pupilJ.data.mapper.childrenActivityDtoToEntity
 import com.pupilJ.data.mapper.childrenDtoOtEntity
 import com.pupilJ.data.mapper.toEntity
 import com.pupilJ.data.remote.ApiService
+import com.pupilJ.domain.models.AboutUS
 import com.pupilJ.domain.models.Children
 import com.pupilJ.domain.models.ChildrenActivity
+import com.pupilJ.domain.models.ContactUs
 import com.pupilJ.domain.models.EmptyDataException
 import com.pupilJ.domain.models.NoInternetException
 import com.pupilJ.domain.models.ServerException
@@ -40,6 +42,23 @@ class ParentRepoImpl(private val apiService: ApiService) : ParentRepo {
         return childrenActivityDtoToEntity(wrapApiResponse {
             apiService.getActivityOfChildren(id)
         })
+    }
+    override suspend fun contactUs(
+        schoolId: Int,
+        name: String,
+        email: String,
+        title: String,
+        problem: String
+    ): ContactUs {
+        return wrapApiResponse {
+            apiService.contactUs(schoolId, name, email, title, problem)
+        }.toEntity()
+    }
+
+    override suspend fun aboutUs(schoolId: Int): AboutUS {
+        return wrapApiResponse {
+            apiService.aboutUs(schoolId)
+        }.toEntity()
     }
 
 private suspend fun <T> wrapApiResponse(

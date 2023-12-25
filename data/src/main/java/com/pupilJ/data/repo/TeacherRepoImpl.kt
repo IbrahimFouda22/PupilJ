@@ -6,6 +6,7 @@ import com.pupilJ.data.mapper.childrenTeacherDtoToEntity
 import com.pupilJ.data.mapper.classDtoToEntity
 import com.pupilJ.data.mapper.toEntity
 import com.pupilJ.data.remote.ApiService
+import com.pupilJ.domain.models.AboutUS
 import com.pupilJ.domain.models.AddActivity
 import com.pupilJ.domain.models.AddReminder
 import com.pupilJ.domain.models.AdditionalFieldFood
@@ -130,6 +131,12 @@ class TeacherRepoImpl(private val apiService: ApiService) : TeacherRepo {
     ): ContactUs {
         return wrapApiResponse {
             apiService.contactUs(schoolId, name, email, title, problem)
+        }.toEntity()
+    }
+
+    override suspend fun aboutUs(schoolId: Int): AboutUS {
+        return wrapApiResponse {
+            apiService.aboutUs(schoolId)
         }.toEntity()
     }
 

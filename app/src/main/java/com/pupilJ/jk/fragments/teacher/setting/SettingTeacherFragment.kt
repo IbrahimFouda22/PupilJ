@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pupilJ.jk.R
 import com.pupilJ.jk.databinding.FragmentSettingTeacherBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -58,6 +60,12 @@ class SettingTeacherFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavParent)
+        bottomNav.visibility = View.VISIBLE
     }
 
 }

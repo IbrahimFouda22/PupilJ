@@ -32,12 +32,6 @@ class HomeParentFragment : Fragment() {
         super.onStart()
         val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavParent)
         bottomNav.visibility = View.VISIBLE
-//        first = getSharedPref(requireActivity().applicationContext).getString("first", null).toString()
-//        last = getSharedPref(requireActivity().applicationContext).getString("last", null).toString()
-//        email = getSharedPref(requireActivity().applicationContext).getString("email", null).toString()
-//        phone = getSharedPref(requireActivity().applicationContext).getString("phone", null).toString()
-//        name = getSharedPref(requireActivity().applicationContext).getString("name", null).toString()
-//        photo = getSharedPref(requireActivity().applicationContext).getString("photo", null).toString()
     }
 
 }

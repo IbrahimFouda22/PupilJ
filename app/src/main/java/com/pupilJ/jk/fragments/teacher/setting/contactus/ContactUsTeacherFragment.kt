@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pupilJ.jk.R
 import com.pupilJ.jk.databinding.FragmentContactUsTeacherBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,6 +39,12 @@ class ContactUsTeacherFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavParent)
+        bottomNav.visibility = View.INVISIBLE
     }
 
 }

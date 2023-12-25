@@ -2,6 +2,7 @@ package com.pupilJ.jk.fragments.parent.children.chat.chat
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,7 +47,8 @@ class ChatParentFragment : Fragment() {
             back(findNavController())
         }
         viewModel.startRoom.observe(viewLifecycleOwner) {
-            viewModel.getMessages(it.chatId)
+            chatId = "user_${navArgs.teacherId}_user_${sharedPreferences.getInt("id", 0)}"
+            viewModel.getMessages(chatId!!)
         }
 
         val adapter = ChatParentAdapter(sharedPreferences.getInt("id", 0))

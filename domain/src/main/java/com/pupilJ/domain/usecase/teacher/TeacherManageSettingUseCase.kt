@@ -1,5 +1,6 @@
 package com.pupilJ.domain.usecase.teacher
 
+import com.pupilJ.domain.models.AboutUS
 import com.pupilJ.domain.models.ContactUs
 import com.pupilJ.domain.models.EmptyDataException
 import com.pupilJ.domain.models.InvalidData
@@ -13,7 +14,7 @@ class TeacherManageSettingUseCase @Inject constructor(private val repo: TeacherR
         return repo.contactUs(schoolId,name, email, title, problem)
     }
 
-
+    suspend fun aboutUs(schoolId: Int ) = repo.aboutUs(schoolId)
 
     private fun validateContactData(name: String,email: String,title: String,problem: String){
         if(name.isNullOrEmpty())

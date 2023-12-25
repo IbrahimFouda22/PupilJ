@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.pupilJ.domain.models.ContactUs
 import com.pupilJ.domain.models.InvalidData
-import com.pupilJ.domain.usecase.teacher.TeacherManageSettingUseCase
+import com.pupilJ.domain.usecase.parent.ParentManageSettingUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ContactUsParentViewModel @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    private val teacherManageSettingUseCase: TeacherManageSettingUseCase,
+    private val parentManageSettingUseCase: ParentManageSettingUseCase,
     application: Application
 ) : AndroidViewModel(application) {
 
@@ -34,7 +34,7 @@ class ContactUsParentViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _settingResponse.value =
-                    teacherManageSettingUseCase.contactUs(
+                    parentManageSettingUseCase.contactUs(
                         sharedPreferences.getString("schoolId","")!!.toInt(),name, email, title, problem)
             } catch (e: InvalidData) {
                 Toast.makeText(getApplication(), e.message, Toast.LENGTH_SHORT).show()

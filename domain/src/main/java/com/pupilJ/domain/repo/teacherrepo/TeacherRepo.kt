@@ -1,6 +1,7 @@
 package com.pupilJ.domain.repo.teacherrepo
 
 
+import com.pupilJ.domain.models.AboutUS
 import com.pupilJ.domain.models.AddActivity
 import com.pupilJ.domain.models.AddReminder
 import com.pupilJ.domain.models.AdditionalFieldFood
@@ -42,6 +43,10 @@ interface TeacherRepo {
         title: String,
         problem: String
     ): ContactUs
+
+    suspend fun aboutUs(
+        schoolId: Int,
+    ): AboutUS
 
     suspend fun setAttendance(
         attendType: String,

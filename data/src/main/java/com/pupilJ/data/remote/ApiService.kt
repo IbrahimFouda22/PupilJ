@@ -1,5 +1,6 @@
 package com.pupilJ.data.remote
 
+import com.pupilJ.data.dto.AboutUsDto
 import com.pupilJ.data.dto.AddActivityDto
 import com.pupilJ.data.dto.AddReminderDto
 import com.pupilJ.data.dto.AttendanceDto
@@ -245,6 +246,11 @@ interface ApiService {
         @Field("title") title: String,
         @Field("message") msg: String
     ): Response<ContactUsDto>
+
+    @GET("school/{id}/about-us")
+    suspend fun aboutUs(
+        @Path("id") schoolId: Int,
+    ): Response<AboutUsDto>
 
     @FormUrlEncoded
     @POST("teacher/chat/start")
