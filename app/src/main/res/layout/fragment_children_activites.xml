@@ -7,7 +7,7 @@
 
         <variable
             name="children"
-            type="com.example.domain.models.Children" />
+            type="com.pupilJ.domain.models.Children" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,10 +74,10 @@
                     android:id="@+id/imgBtnMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:padding="5dp"
-                    android:src="@drawable/icon_chat"
+                    android:src="@drawable/icon_messages"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/imgRectangle_childActivity"
                     app:layout_constraintTop_toBottomOf="@+id/txtName_childrenActivity" />
@@ -98,7 +98,7 @@
                     android:id="@+id/imgBtnCalender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:padding="5dp"
                     android:src="@drawable/icon_calender"
@@ -133,10 +133,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_childrenActivity" />
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/btnArrowActivityDownParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="5dp"
             android:src="@drawable/icon_arrow_down"
             app:layout_constraintBottom_toBottomOf="@+id/txtAllActivity_childrenActivity"
             app:layout_constraintStart_toEndOf="@+id/txtAllActivity_childrenActivity"
@@ -185,5 +188,17 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSpecificChild_Parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardDate_childrenActivity"
+            tools:itemCount="5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,7 +7,7 @@
 
         <variable
             name="children"
-            type="com.example.domain.models.ChildrenTeacher" />
+            type="com.pupilJ.domain.models.ChildrenTeacher" />
 
         <variable
             name="className"
@@ -48,6 +48,7 @@
                     android:text="@{className}"
                     android:textColor="@color/white"
                     android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/txtCloseSpecificChildren_profile"
                     app:layout_constraintBottom_toBottomOf="@+id/txtCloseSpecificChildren_profile"
                     app:layout_constraintEnd_toEndOf="@+id/imgRectangle_childActivity"
                     app:layout_constraintStart_toStartOf="@+id/imgRectangle_childActivity"

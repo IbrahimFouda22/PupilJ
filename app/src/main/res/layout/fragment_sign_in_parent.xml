@@ -21,13 +21,14 @@
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/txtHeadSignin"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="@string/sign_in"
             android:textColor="@color/canary"
             android:textSize="45sp"
             app:layout_constraintStart_toStartOf="@+id/edtId"
+            app:layout_constraintEnd_toStartOf="@+id/imgSignIn"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -43,13 +44,13 @@
 
         <ImageView
             android:id="@+id/imgSignIn"
-            android:layout_width="0dp"
+            android:layout_width="50dp"
             android:layout_height="150dp"
             android:layout_marginEnd="60dp"
             android:scaleType="center"
             android:src="@drawable/img_signin"
             app:layout_constraintBottom_toBottomOf="@+id/txtHeadSignin"
-            app:layout_constraintEnd_toEndOf="@+id/edtId"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtHeadSignin"
             app:layout_constraintTop_toTopOf="@id/txtHeadSignin" />
 

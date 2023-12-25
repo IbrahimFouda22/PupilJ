@@ -1,82 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
             name="children"
-            type="com.example.domain.models.ChildrenTeacher" />
+            type="com.pupilJ.domain.models.ChildrenTeacher" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:clickable="true"
-        android:focusable="true"
         android:background="?android:attr/selectableItemBackground"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:clickable="true"
+        android:focusable="true">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/imgStudent_Attendance"
             android:layout_width="70dp"
             android:layout_height="70dp"
             app:cardCornerRadius="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:background="@color/grey"
-                    bindImageCorrect="@{children.selected}"
-                    android:src="@drawable/icon_selected"/>
 
                 <ImageView
+                    bindImageCorrect="@{children.selected}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_selected" />
+
+                <ImageView
+                    bindImage="@{children.profilePhotoUrl}"
+                    bindSrcCorrect="@{children.selected}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    bindImage="@{children.profilePhotoUrl}"
-                    bindSrcCorrect="@{children.selected}"
                     android:src="@drawable/img_item_child" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/txtAttend_Attendance"
-            app:layout_constraintStart_toStartOf="@+id/imgStudent_Attendance"
-            app:layout_constraintEnd_toEndOf="@id/imgStudent_Attendance"
-            app:layout_constraintTop_toBottomOf="@+id/imgStudent_Attendance"
-            android:background="@drawable/shape_text_attend"
-            android:textColor="@color/white"
+            checkedIn="@{children.checkedIn}"
+            checkedOut="@{children.checkedOut}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            bindTextAttend="@{children.attendToday}"
+            android:background="@drawable/shape_text_attend"
             android:padding="1dp"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
+            android:textColor="@color/white"
             android:textSize="12sp"
-            tools:text="checked in"/>
+            app:layout_constraintEnd_toEndOf="@id/imgStudent_Attendance"
+            app:layout_constraintStart_toStartOf="@+id/imgStudent_Attendance"
+            app:layout_constraintTop_toBottomOf="@+id/imgStudent_Attendance"
+            tools:text="checked in" />
+
         <TextView
             android:id="@+id/txtStudentName_Attendance"
-            app:layout_constraintStart_toStartOf="@+id/imgStudent_Attendance"
-            app:layout_constraintEnd_toEndOf="@id/imgStudent_Attendance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAttend_Attendance"
             android:layout_width="0dp"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            app:layout_goneMarginTop="20dp"
+            android:layout_marginTop="10dp"
             android:maxLines="3"
             android:text="@{children.name}"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
             android:textSize="12sp"
-            tools:text="Name "/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgStudent_Attendance"
+            app:layout_constraintStart_toStartOf="@+id/imgStudent_Attendance"
+            app:layout_constraintTop_toBottomOf="@+id/txtAttend_Attendance"
+            app:layout_goneMarginTop="20dp"
+            tools:text="Name " />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

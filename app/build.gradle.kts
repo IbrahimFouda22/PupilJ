@@ -8,15 +8,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.schoolapp"
+    namespace = "com.pupilJ.jk"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.schoolapp"
+        applicationId = "com.pupilJ.jk"
         minSdk = 24
         targetSdk = 33
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 55
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,10 +24,14 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            debug {
+                isDebuggable = true
+            }
         }
     }
     compileOptions {
@@ -53,8 +57,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
     //dotsIndicator
     implementation("com.tbuonomo:dotsindicator:5.0")
@@ -85,10 +89,13 @@ dependencies {
     //splash scerrn
     implementation ("androidx.core:core-splashscreen:1.0.1")
 
+    //pusher
+    implementation ("com.pusher:pusher-java-client:2.2.5")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
 
     implementation(project(":domain"))
     implementation(project(":data"))
-
+    //implementation("com.pusher:pusher-http-java:1.8.0")
 
 }
 // Allow references to generated code

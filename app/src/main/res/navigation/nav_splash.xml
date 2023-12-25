@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/viewPagerFragment"
         tools:layout="@layout/fragment_view_pager"
-        android:name="com.example.schoolapp.fragments.onboarding.ViewPagerFragment"
+        android:name="com.pupilJ.jk.fragments.onboarding.ViewPagerFragment"
         android:label="ViewPagerFragment" >
         <action
             android:id="@+id/action_viewPagerFragment_to_joinAsFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/joinAsFragment"
-        android:name="com.example.schoolapp.fragments.joinas.JoinAsFragment"
+        android:name="com.pupilJ.jk.fragments.joinas.JoinAsFragment"
         android:label="fragment_join_as"
         tools:layout="@layout/fragment_join_as" >
         <action
@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/signIn"
         tools:layout="@layout/fragment_sign_in_parent"
-        android:name="com.example.schoolapp.fragments.signin.SignIn"
+        android:name="com.pupilJ.jk.fragments.signin.SignIn"
         android:label="SignIn" >
         <argument
             android:name="actor"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.schoolapp.fragments.splash.SplashFragment"
+        android:name="com.pupilJ.jk.fragments.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

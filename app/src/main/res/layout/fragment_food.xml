@@ -6,7 +6,7 @@
     <data>
         <variable
             name="children"
-            type="com.example.domain.models.ChildrenTeacher" />
+            type="com.pupilJ.domain.models.ChildrenTeacher" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -324,9 +324,9 @@
                     android:gravity="top"
                     android:inputType="textMultiLine"
                     android:overScrollMode="always"
-                    android:padding="10dp"
                     android:scrollbarStyle="insideInset"
                     android:scrollbars="vertical"
+                    android:padding="10dp"
                     android:textColor="@color/black"
                     android:textSize="@dimen/areaTextSize"
                     app:layout_constraintBottom_toTopOf="@+id/btnAddActivityFood_teacher"

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.domain.models.CustomizeChildrenActivity" />
+            type="com.pupilJ.domain.models.CustomizeChildrenActivity" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,10 +57,21 @@
 
         <ImageView
             android:id="@+id/imgItemActivity_teacher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_marginTop="10dp"
             android:visibility="gone"
+            bindImage="@{item.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDateItemActivity"
+            tools:src="@drawable/img_onboard_screen2"/>
+        <VideoView
+            android:id="@+id/videoItemActivity_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            bindVideo="@{item.video}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDateItemActivity"
             tools:src="@drawable/img_onboard_screen2"/>

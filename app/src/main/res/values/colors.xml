@@ -8,6 +8,7 @@
     <color name="canary">#FF9800</color>
     <color name="textView_color">#657556</color>
     <color name="grey">#808080</color>
+    <color name="colorTextMessageSent">#505050</color>
     <color name="greyDark">#777777</color>
     <color name="greyLight">#9a9a9a</color>
     <color name="colorEditTextBackGround">#F5F5F5</color>
@@ -21,6 +22,8 @@
     <color name="colorCenterCard">#D9D9D900</color>
     <color name="colorBackGroundDailyText">#17A1FA</color>
     <color name="colorIconSetting">#17A1FA</color>
+    <color name="colorBlue">#3369FF</color>
+    <color name="colorMessageSent">#EEEEEE</color>
     <color name="colorChipBackGround">#E9E8EB</color>
     <color name="colorAttended">#4CAF50</color>
     <color name="colorNotAttended">#E33131</color>

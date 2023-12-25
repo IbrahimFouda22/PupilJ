@@ -1,16 +1,15 @@
 <resources>
-    <string name="app_name">Pupil J</string>
+    <string name="app_name" translatable="false">Pupil J</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="skip">skip</string>
-    <string name="prev">Prev</string>
+    <string name="prev" translatable="false">Prev</string>
     <string name="next">Next</string>
     <string name="innovation">Innovation</string>
-    <string name="underInnovation">Unlock Your Potential with Pupil J - \n Where Learning Meets Innovation</string>
     <string name="head_screen3">Empowering Educators</string>
-    <string name="under_head_screen3">Empowering Educators to Shape the Leaders\n of Tomorrow - Welcome to Pupil J</string>
+    <string name="under_head_screen3">Empowering Educators to Shape the Leaders  of Tomorrow - Welcome to Pupil J</string>
     <string name="head_screen4">Future Of Education</string>
-    <string name="under_head_screen4">Unlocking the Future of Education - Welcome\n to Pupil J !</string>
+    <string name="under_head_screen4">Unlocking the Future of Education - Welcome  to Pupil J !</string>
     <string name="join_as">Join as</string>
     <string name="parent">Parent</string>
     <string name="teacher">Teacher</string>
@@ -89,8 +88,8 @@
     <string name="attendance">Attendance</string>
     <string name="attended">Attended</string>
     <string name="notAttended">Not Attended</string>
-    <string name="check_in">Check in</string>
-    <string name="check_out">Check out</string>
+    <string name="check_in">Checked in</string>
+    <string name="check_out">Checked out</string>
     <string name="meal_items">Meal Items</string>
     <string name="wet">Wet</string>
     <string name="bm">Bm</string>
@@ -114,4 +113,23 @@
     <string name="city">City</string>
     <string name="milestones">Milestones</string>
     <string name="staff_only">Staff Only</string>
+    <string name="describe_how_can_we_help">Describe how can we help..</string>
+    <string name="send">Send</string>
+    <string name="title">Title</string>
+    <string name="text_head_reminder">You Haven’t Set Any Reminders.</string>
+    <string name="text_under_head_reminder">Set a reminder to be notified about diper checks, bottles, meal times.</string>
+    <string name="add_a_reminder">Add a reminder</string>
+    <string name="create_reminder">Create reminder</string>
+    <string name="toilet">Toilet</string>
+    <string name="next_reminder">Next Reminder</string>
+    <string name="repeat_until_check_out">Repeat Until check-out</string>
+    <string name="create_a_reminder">Create a reminder</string>
+    <string name="napSmall" translatable="false">nap</string>
+    <string name="toiletSmall" translatable="false">toilet</string>
+    <string name="noteSmall" translatable="false">note</string>
+    <string name="medsSmall" translatable="false">meds</string>
+    <string name="diberSmall" translatable="false">diber</string>
+    <string name="foodSmall" translatable="false">food</string>
+    <string name="underInnovation">Unlock Your Potential with Pupil J -   Where Learning Meets Innovation</string>
+    <string name="write_your_message">Write Your Message</string>
 </resources>

@@ -2,6 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="profile"
+            type="com.pupilJ.domain.models.UserProfile" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -9,7 +14,7 @@
         tools:context=".fragments.parent.profile.ProfileParentFragment">
 
         <TextView
-            android:id="@+id/txtProfile_profile"
+            android:id="@+id/txtProfile_profileParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -22,37 +27,38 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtUnderHead_profile"
+            android:id="@+id/txtUnderHead_profileParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Ibrahim Fouda Mohamed"
+            android:text="@{profile.name}"
             android:textColor="@color/colorPrimary"
-            app:layout_constraintEnd_toEndOf="@id/txtProfile_profile"
-            app:layout_constraintStart_toStartOf="@+id/txtProfile_profile"
-            app:layout_constraintTop_toBottomOf="@id/txtProfile_profile" />
+            app:layout_constraintEnd_toEndOf="@id/txtProfile_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/txtProfile_profileParent"
+            app:layout_constraintTop_toBottomOf="@id/txtProfile_profileParent" />
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/imgCircular_profile"
+            android:id="@+id/imgCircular_profileParent"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
             app:cardCornerRadius="150dp"
-            app:layout_constraintEnd_toEndOf="@id/txtProfile_profile"
-            app:layout_constraintStart_toStartOf="@+id/txtProfile_profile"
-            app:layout_constraintTop_toBottomOf="@id/txtUnderHead_profile">
+            app:layout_constraintEnd_toEndOf="@id/txtProfile_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/txtProfile_profileParent"
+            app:layout_constraintTop_toBottomOf="@id/txtUnderHead_profileParent">
 
             <ImageView
-                android:id="@+id/imgProfile_Profile"
+                android:id="@+id/imgProfile_ProfileParent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
+                bindImage="@{profile.profilePhoto}"
                 android:src="@drawable/img_circular" />
         </androidx.cardview.widget.CardView>
 
         <EditText
-            android:id="@+id/edtPersonalDetails_profile"
+            android:id="@+id/edtPersonalDetails_profileParent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -62,25 +68,26 @@
             android:padding="12dp"
             android:text="@string/personal_details"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/imgCircular_profile" />
+            app:layout_constraintTop_toBottomOf="@+id/imgCircular_profileParent" />
 
         <EditText
-            android:id="@+id/edtFirstName_profile"
+            android:id="@+id/edtFirstName_profileParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edit_text_2"
             android:hint="@string/name"
             android:inputType="text"
+            android:text="@{profile.name}"
             android:padding="10dp"
             android:enabled="false"
             android:textColor="@color/colorTextInEditText"
-            app:layout_constraintEnd_toEndOf="@+id/edtPersonalDetails_profile"
-            app:layout_constraintStart_toStartOf="@+id/edtPersonalDetails_profile"
-            app:layout_constraintTop_toBottomOf="@+id/edtPersonalDetails_profile" />
+            app:layout_constraintEnd_toEndOf="@+id/edtPersonalDetails_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/edtPersonalDetails_profileParent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPersonalDetails_profileParent" />
 
 
         <EditText
-            android:id="@+id/edtAccountInfo_profile"
+            android:id="@+id/edtAccountInfo_profileParent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -90,45 +97,47 @@
             android:padding="12dp"
             android:text="@string/account_info"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/edtFirstName_profile"
+            app:layout_constraintTop_toBottomOf="@+id/edtFirstName_profileParent"
             tools:layout_editor_absoluteX="10dp" />
 
         <EditText
-            android:id="@+id/edtEmail_profile"
+            android:id="@+id/edtEmail_profileParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edit_text_2"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
+            android:text="@{profile.email}"
             android:enabled="false"
             android:textColor="@color/colorTextInEditText"
-            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintTop_toBottomOf="@+id/edtAccountInfo_profile" />
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintTop_toBottomOf="@+id/edtAccountInfo_profileParent" />
 
         <EditText
-            android:id="@+id/edtPhoneNo_profile"
+            android:id="@+id/edtPhoneNo_profileParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edit_text_2"
-            android:hint="@string/phone_no"
             android:inputType="phone"
             android:padding="10dp"
+            android:text="@{profile.phone}"
             android:enabled="false"
             android:textColor="@color/colorTextInEditText"
-            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintTop_toBottomOf="@+id/edtEmail_profile" />
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail_profileParent" />
 
         <Button
             style="@style/buttonLogOut"
+            android:id="@+id/btnLogout_profileParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/log_out"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profile"
-            app:layout_constraintTop_toBottomOf="@+id/edtPhoneNo_profile" />
+            app:layout_constraintEnd_toEndOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintStart_toStartOf="@+id/edtAccountInfo_profileParent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPhoneNo_profileParent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

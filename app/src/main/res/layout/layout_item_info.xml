@@ -6,7 +6,7 @@
     <data>
         <variable
             name="childrenInfo"
-            type="com.example.domain.models.ChildrenTeacher" />
+            type="com.pupilJ.domain.models.ChildrenTeacher" />
     </data>
     <ScrollView
         android:layout_width="match_parent"

@@ -1,37 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.SchoolApp" parent="Theme.Material3.DayNight.NoActionBar">
+<resources>
+    <style name="Base.Theme.SchoolApp" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/colorPrimary</item>
     </style>
-
     <style name="Theme.SchoolApp" parent="Base.Theme.SchoolApp" />
-    <style name="buttonOnboard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-        <item name="backgroundTint">@color/white</item>
-    </style>
 
-    <style name="buttonLogOut" parent="buttonOnboard">
-        <item name="android:textColor">@color/red</item>
-        <item name="strokeColor">@color/colorEditTextBorder</item>
-        <item name="strokeWidth">1dp</item>
-        <item name="cornerRadius">1dp</item>
-        <item name="rippleColor">@color/greyLight</item>
-    </style>
-
-    <style name="Widget.App.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.CircularProgressIndicator</item>
-        <item name="trackThickness">20dp</item>
-    </style>
-    <style name="ThemeOverlay.App.CircularProgressIndicator" parent="">
-        <item name="colorPrimary">@color/colorPrimary</item>
-    </style>
-
-    <style name="chipStyle" parent="Widget.MaterialComponents.Chip.Filter">
-        <item name="chipBackgroundColor">@color/chip_background</item>
-        <item name="android:textColor">@color/chip_text</item>
-        <item name="checkedIconTint">@color/white</item>
-    </style>
 </resources>

@@ -48,7 +48,7 @@
         </activity>
         
         <provider
-            android:authorities="com.example.schoolapp.fileProvider"
+            android:authorities="com.example.jk.fileProvider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

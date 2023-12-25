@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="children"
+            type="com.pupilJ.domain.models.ChildrenTeacher" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.teacher.home.reminder.addreminder.AddReminderFragment">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAddReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtBackAddReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/back"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtNameAddReminder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtNameAddReminder" />
+
+                <TextView
+                    android:id="@+id/txtNameAddReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/create_reminder"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/head_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons"
+            app:layout_constraintTop_toBottomOf="@+id/cardAddReminder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imgCircularStudentAddReminder"
+                android:layout_width="@dimen/imgActivitySize"
+                android:layout_height="@dimen/imgActivitySize"
+                app:cardCornerRadius="@dimen/imgActivitySize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    bindImage="@{children.profilePhotoUrl}"
+                    android:src="@drawable/img_item_child" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtNameStudentAddReminder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:text="@{children.name}"
+                android:textSize="@dimen/head_size"
+                app:layout_constraintBottom_toBottomOf="@+id/imgCircularStudentAddReminder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgCircularStudentAddReminder"
+                app:layout_constraintTop_toTopOf="@+id/imgCircularStudentAddReminder"
+                tools:text="Yehia Ahmed" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipAddReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNameStudentAddReminder"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipFoodAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_food_add_reminder"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipCornerRadius="5dp"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMedAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/meds"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_med_add_reminder"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding"
+                    app:chipCornerRadius="5dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipToiletAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/toilet"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_toilte_add_reminder"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding"
+                    app:chipCornerRadius="5dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNapAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nap"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_nap_add_reminder"
+                    app:chipCornerRadius="5dp"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDiberAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_diber_add_reminder"
+                    android:text="@string/diber"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding"
+                    app:chipCornerRadius="5dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNotesAddReminder"
+                    style="@style/chipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipIconVisible="true"
+                    app:chipIcon="@drawable/icon_notes_add_reminder"
+                    android:text="@string/note"
+                    android:textSize="@dimen/chipNapText"
+                    app:chipEndPadding="@dimen/chipAddReminderPadding"
+                    app:chipStartPadding="@dimen/chipAddReminderPadding"
+                    app:chipCornerRadius="5dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <View
+                android:id="@+id/lineUnderChipAddReminder"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/chipAddReminder" />
+
+            <ImageView
+                android:id="@+id/imgNextReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_food_add_reminder"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/lineUnderChipAddReminder" />
+
+            <TextView
+                android:id="@+id/txtNextReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next_reminder"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toEndOf="@+id/imgNextReminder"
+                app:layout_constraintTop_toTopOf="@+id/imgNextReminder"
+                app:layout_constraintBottom_toBottomOf="@+id/imgNextReminder"/>
+
+            <TextView
+                android:id="@+id/txtNextReminder2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorBackGroundDailyText"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toEndOf="@+id/txtNextReminder"
+                app:layout_constraintTop_toTopOf="@+id/txtNextReminder"
+                tools:text="2023-12-24" />
+
+            <ImageButton
+                android:id="@+id/imgEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorBackGroundDailyText"
+                android:textSize="@dimen/txtCardInfoDimen"
+                android:padding="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtNextReminder"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNextReminder"
+                tools:text="2023-12-24" />
+
+            <View
+                android:id="@+id/lineUnderNextReminder"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/txtNextReminder2" />
+
+
+            <ImageView
+                android:id="@+id/imgRepeatReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_repeat"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/lineUnderNextReminder" />
+
+            <TextView
+                android:id="@+id/txtRepeatReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/repeat_until_check_out"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:textSize="@dimen/txtCardInfoDimen"
+                app:layout_constraintStart_toEndOf="@+id/imgRepeatReminder"
+                app:layout_constraintTop_toTopOf="@+id/imgRepeatReminder"
+                app:layout_constraintBottom_toBottomOf="@+id/imgRepeatReminder"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchRepeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtRepeatReminder"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRepeatReminder"/>
+
+            <View
+                android:id="@+id/lineUnderRepeatAddReminder"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_line"
+                app:layout_constraintTop_toBottomOf="@id/txtRepeatReminder" />
+
+            <Button
+                android:id="@+id/btnCreateReminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_button"
+                android:text="@string/create_a_reminder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineUnderRepeatAddReminder" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

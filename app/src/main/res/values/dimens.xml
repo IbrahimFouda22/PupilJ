@@ -7,8 +7,10 @@
     <dimen name="textSettingDimen">14sp</dimen>
     <dimen name="cardDimen">40dp</dimen>
     <dimen name="txtCardInfoDimen">18sp</dimen>
-    <dimen name="chipNapText">14sp</dimen>
+    <dimen name="chipNapText">16sp</dimen>
     <dimen name="chipNapPadding">2dp</dimen>
+    <dimen name="chipAddReminderText">14sp</dimen>
+    <dimen name="chipAddReminderPadding">12dp</dimen>
     <dimen name="chipPottyPadding">10dp</dimen>
     <dimen name="chipFood_foodText">20sp</dimen>
     <dimen name="chipFood_foodPadding">20dp</dimen>
@@ -21,4 +23,5 @@
     <dimen name="areaHeight">120dp</dimen>
     <dimen name="imgActivitySize">50dp</dimen>
     <dimen name="iconSettingSize">50dp</dimen>
+    <dimen name="messageCorner">40dp</dimen>
 </resources>

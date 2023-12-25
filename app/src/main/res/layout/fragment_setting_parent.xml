@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.parent.children.mychildrens.MyChildrenFragment">
+        android:padding="20dp">
 
         <TextView
-            android:id="@+id/txtSetting_Setting"
+            android:id="@+id/txtSetting_SettingParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -22,176 +21,138 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imgInfo_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imgInfo_settingParent"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             android:backgroundTint="@color/white"
-            android:src="@drawable/icon_info"
+            android:src="@drawable/icon_info_setting"
+            app:layout_constraintBottom_toTopOf="@+id/lineInfo_settingParent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtSetting_Setting" />
+            app:layout_constraintTop_toBottomOf="@+id/txtSetting_SettingParent" />
 
         <TextView
-            android:id="@+id/txtInfo_setting"
+            android:id="@+id/txtInfo_settingParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/about_us"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSettingDimen"
-            app:layout_constraintBottom_toBottomOf="@+id/imgInfo_setting"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgInfo_setting"
-            app:layout_constraintTop_toTopOf="@+id/imgInfo_setting" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgInfo_settingParent"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowAboutUs_settingParent"
+            app:layout_constraintStart_toEndOf="@+id/imgInfo_settingParent"
+            app:layout_constraintTop_toTopOf="@+id/imgInfo_settingParent" />
 
-        <View
-            android:id="@+id/lineInfo_setting"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_line"
-            app:layout_constraintTop_toBottomOf="@+id/imgInfo_setting" />
-
-        <ImageView
-            android:id="@+id/imgContact_setting"
+        <ImageButton
+            android:id="@+id/btnArrowAboutUs_settingParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_arrow_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtInfo_settingParent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtInfo_settingParent"
+            app:layout_constraintTop_toTopOf="@+id/txtInfo_settingParent" />
+
+        <View
+            android:id="@+id/lineInfo_settingParent"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_line"
+            app:layout_constraintBottom_toTopOf="@+id/imgContact_settingParent"
+            app:layout_constraintTop_toBottomOf="@+id/imgInfo_settingParent" />
+
+        <ImageView
+            android:id="@+id/imgContact_settingParent"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/white"
             android:src="@drawable/icon_contact"
-            app:layout_constraintStart_toStartOf="@+id/imgInfo_setting"
-            app:layout_constraintTop_toBottomOf="@+id/lineInfo_setting" />
+            app:layout_constraintBottom_toTopOf="@+id/lineContact_settingParent"
+            app:layout_constraintStart_toStartOf="@+id/imgInfo_settingParent"
+            app:layout_constraintTop_toBottomOf="@+id/lineInfo_settingParent" />
 
         <TextView
-            android:id="@+id/txtContact_setting"
+            android:id="@+id/txtContact_settingParent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/contact_us"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSettingDimen"
-            app:layout_constraintBottom_toBottomOf="@+id/imgContact_setting"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgContact_settingParent"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowContactUs_settingParent"
+            app:layout_constraintStart_toEndOf="@+id/imgContact_settingParent"
+            app:layout_constraintTop_toTopOf="@+id/imgContact_settingParent" />
+
+        <ImageButton
+            android:id="@+id/btnArrowContactUs_settingParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_arrow_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtContact_settingParent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgContact_setting"
-            app:layout_constraintTop_toTopOf="@+id/imgContact_setting" />
+            app:layout_constraintStart_toEndOf="@+id/txtContact_settingParent"
+            app:layout_constraintTop_toTopOf="@+id/txtContact_settingParent" />
 
         <View
-            android:id="@+id/lineContact_setting"
+            android:id="@+id/lineContact_settingParent"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/shape_line"
-            app:layout_constraintTop_toBottomOf="@+id/imgContact_setting" />
+            app:layout_constraintTop_toBottomOf="@+id/imgContact_settingParent" />
 
-        <ImageView
-            android:id="@+id/imgLanguage_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/icon_language"
-            app:layout_constraintStart_toStartOf="@+id/imgInfo_setting"
-            app:layout_constraintTop_toBottomOf="@+id/lineContact_setting" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imgLanguage_settingParent"-->
+<!--            android:layout_width="@dimen/iconSettingSize"-->
+<!--            android:layout_height="@dimen/iconSettingSize"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:src="@drawable/icon_language"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/lineLanguage_settingParent"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/imgInfo_settingParent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/lineContact_settingParent" />-->
 
-        <TextView
-            android:id="@+id/txtLanguage_setting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="@string/change_language"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSettingDimen"
-            app:layout_constraintBottom_toBottomOf="@+id/imgLanguage_setting"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgLanguage_setting"
-            app:layout_constraintTop_toTopOf="@+id/imgLanguage_setting" />
+<!--        <TextView-->
+<!--            android:id="@+id/txtLanguage_settingParent"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:text="@string/change_language"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="@dimen/head_size"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/imgLanguage_settingParent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/btnArrowChangeLang_settingParent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imgLanguage_settingParent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/imgLanguage_settingParent" />-->
 
-        <View
-            android:id="@+id/lineLanguage_setting"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/imgLanguage_setting" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnArrowChangeLang_settingParent"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:src="@drawable/icon_arrow_setting"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/txtLanguage_settingParent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/txtLanguage_settingParent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/txtLanguage_settingParent" />-->
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardNotification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/imgInfo_setting"
-            app:layout_constraintTop_toBottomOf="@+id/lineLanguage_setting">
+<!--        <View-->
+<!--            android:id="@+id/lineLanguage_settingParent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="4dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="200dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imgLanguage_settingParent"-->
+<!--            tools:layout_editor_absoluteX="20dp" />-->
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorEditTextBackGround"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/imgNotification_setting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/icon_notification" />
-
-                <TextView
-                    android:id="@+id/txtNotification_setting"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/notification"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/textSettingDimen"
-                    app:layout_constraintBottom_toBottomOf="@+id/imgNotification_setting"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgNotification_setting"
-                    app:layout_constraintTop_toTopOf="@+id/imgNotification_setting" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/txtSwitchCheckInOut_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/imgInfo_setting"
-            app:layout_constraintTop_toBottomOf="@+id/cardNotification"
-            android:text="@string/check_in_out"/>
-
-        <Switch
-            android:id="@+id/switchCheckInOut_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txtSwitchCheckInOut_setting"
-            app:layout_constraintBottom_toBottomOf="@+id/txtSwitchCheckInOut_setting"/>
-
-        <TextView
-            android:id="@+id/txtPhotosVideos_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/txtSwitchCheckInOut_setting"
-            app:layout_constraintTop_toBottomOf="@+id/txtSwitchCheckInOut_setting"
-            android:text="@string/photos_amp_videos"/>
-
-        <Switch
-            android:id="@+id/switchCheckInOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txtPhotosVideos_setting"
-            app:layout_constraintBottom_toBottomOf="@+id/txtPhotosVideos_setting"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

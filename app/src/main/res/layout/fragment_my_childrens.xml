@@ -10,6 +10,18 @@
         tools:context=".fragments.parent.children.mychildrens.MyChildrenFragment">
 
         <TextView
+            android:id="@+id/txtBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/close"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtMyChildren_myChildren"
+            app:layout_constraintBottom_toBottomOf="@+id/txtMyChildren_myChildren"/>
+
+
+        <TextView
             android:id="@+id/txtMyChildren_myChildren"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,7 +29,6 @@
             android:text="@string/my_children"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/head_size"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        tools:context=".fragments.teacher.setting.contactus.ContactUsTeacherFragment">
+
+        <TextView
+            android:id="@+id/txtSettings_SettingTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/settings"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgContact_settingContactTeacher"
+            android:layout_width="@dimen/iconSettingSize"
+            android:layout_height="@dimen/iconSettingSize"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/icon_contact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSettings_SettingTeacher" />
+
+        <TextView
+            android:id="@+id/txtContact_settingContactTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/contact_us"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/head_size"
+            app:layout_constraintBottom_toBottomOf="@+id/imgContact_settingContactTeacher"
+            app:layout_constraintEnd_toStartOf="@+id/btnArrowContactUs_settingContactTeacher"
+            app:layout_constraintStart_toEndOf="@+id/imgContact_settingContactTeacher"
+            app:layout_constraintTop_toTopOf="@+id/imgContact_settingContactTeacher" />
+
+        <ImageView
+            android:id="@+id/btnArrowContactUs_settingContactTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_arrow_down_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/txtContact_settingContactTeacher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtContact_settingContactTeacher"
+            app:layout_constraintTop_toTopOf="@+id/txtContact_settingContactTeacher" />
+
+        <EditText
+            android:id="@+id/edtName_SettingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_setting"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:layout_marginTop="30dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgContact_settingContactTeacher" />
+
+        <EditText
+            android:id="@+id/edtEmail_SettingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_setting"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtName_SettingTeacher" />
+
+        <EditText
+            android:id="@+id/edtTitle_SettingTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_text_setting"
+            android:hint="@string/title"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail_SettingTeacher" />
+
+        <EditText
+            android:id="@+id/edtProblem_profileTeacher"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:background="@drawable/shape_edit_text_setting"
+            android:hint="@string/describe_how_can_we_help"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTitle_SettingTeacher" />
+        <Button
+            android:id="@+id/btnSend_SettingTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_button"
+            android:text="@string/send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtProblem_profileTeacher" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
