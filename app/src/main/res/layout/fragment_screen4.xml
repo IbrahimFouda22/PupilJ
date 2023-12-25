@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.onboarding.screens.Screen4Fragment">
 
     <ImageView
         android:id="@+id/imgOnboard4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/img_onboard_screen4"/>
+        android:src="@drawable/img_onboard_screen4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtHead4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/imgOnboard4"
-        app:layout_constraintEnd_toEndOf="@id/imgOnboard4"
-        app:layout_constraintTop_toBottomOf="@id/imgOnboard4"
+        android:layout_marginTop="40dp"
+        android:text="@string/head_screen4"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/head_size"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginTop="40dp"
-        android:text="@string/head_screen4"/>
+        app:layout_constraintEnd_toEndOf="@id/imgOnboard4"
+        app:layout_constraintStart_toStartOf="@+id/imgOnboard4"
+        app:layout_constraintTop_toBottomOf="@id/imgOnboard4" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/txtHead4"
-        app:layout_constraintEnd_toEndOf="@id/txtHead4"
-        app:layout_constraintTop_toBottomOf="@id/txtHead4"
-        android:textColor="@color/colorPrimary"
         android:layout_marginTop="20dp"
-        android:text="@string/under_head_screen4"/>
+        android:layout_marginHorizontal="40dp"
+        android:text="@string/under_head_screen4"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtHead4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
